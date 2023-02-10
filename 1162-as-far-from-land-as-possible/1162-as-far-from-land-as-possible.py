@@ -33,7 +33,6 @@ class Solution:
                 dp[i][j] = min(dp[i][j], dist)
                 
                 if dp[i][j] >= dist:
-                    
                     dp[i][j] = dist
                 else:
                     continue  
