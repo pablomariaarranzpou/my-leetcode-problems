@@ -30,8 +30,6 @@ class Solution:
             
             if (grid[i][j] != 1 or (i == ini_i and ini_j == j)):
                 
-                dp[i][j] = min(dp[i][j], dist)
-                
                 if dp[i][j] >= dist:
                     dp[i][j] = dist
                 else:
