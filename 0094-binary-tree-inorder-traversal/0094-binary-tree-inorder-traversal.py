@@ -10,20 +10,14 @@ class Solution:
         self.output = []
         
         
-    def inorderTraversal(self, root: Optional[TreeNode]) -> List[int]:
-        
+    def inorderTraversal(self, root: Optional[TreeNode]) -> List[int]: 
         if not root:
             return []
-        
         self.inorder(root)
-        
         return self.output
-        
-        
-        
+ 
         
     def inorder(self, node):
-     
         if node.left != None:
             self.inorder(node.left)
                 
