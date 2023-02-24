@@ -15,27 +15,23 @@ class Solution:
         if not root:
             return []
         
-        self.inorder(root, set())
+        self.inorder(root)
         
         return self.output
         
         
         
         
-    def inorder(self, node, visited):
-        
-        if node not in visited:
-            
-            visited.add(node)
-            
-            if node.left != None:
-                self.inorder(node.left, visited)
+    def inorder(self, node):
+     
+        if node.left != None:
+            self.inorder(node.left)
                 
-            self.output.append(node.val)
+        self.output.append(node.val)
                 
-            if node.right != None:
+        if node.right != None:
                 
-                self.inorder(node.right, visited)
+            self.inorder(node.right)
                 
             
                 
