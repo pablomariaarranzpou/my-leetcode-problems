@@ -1,18 +1,20 @@
 class Solution:
     def isPowerOfTwo(self, n: int) -> bool:
+        c = 0
         
-        if n == 1:
-            return True
         
-        if n < 1:
+        if n < 0:
+            return False 
+        for i in bin(n)[2:]:
+            
+            if i == '1':
+                c += 1
+            if c == 2:
+                return False
+        
+        if c == 0:
             return False
         
-        while n != 2:
-            
-            if n % 2 == 0:
-                n /= 2
-                
-            else:
-                return False
-            
         return True
+        
+        
