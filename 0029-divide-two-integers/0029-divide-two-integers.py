@@ -5,10 +5,7 @@ class Solution:
         if dividend == -2147483648 and divisor == -1:
             return 2147483647
         
-        result = dividend/ divisor
-        
-        
-        if(result >= 0):
-            return math.floor(result)
+        if(dividend/ divisor >= 0):
+            return math.floor(dividend/ divisor)
         else:
-            return math.ceil(result)         
+            return math.ceil(dividend/ divisor)         
