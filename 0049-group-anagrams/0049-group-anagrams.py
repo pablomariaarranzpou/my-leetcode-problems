@@ -6,16 +6,16 @@ class Solution:
         
         for word in strs:
             selected = False
-            sort = sorted(word)
+            sort = "".join(sorted(word))
             
             for key in groups.keys():
-                if "".join(sort) == key:
+                if sort == key:
                     groups[key].append(word)
                     selected = True
                     break
                     
-            if(selected == False):           
-                groups["".join(sort)] = [word]
+            if not selected:           
+                groups[sort] = [word]
                 
         for gr in groups.values():
             sol.append(gr)
