@@ -4,8 +4,10 @@ class Solution:
         res = 0
         
         while(numBottles >= numExchange):
-            res += numExchange
-            numBottles -= numExchange
-            numBottles += 1
+            var = numBottles // numExchange
+            res += numExchange * var
+            numBottles -= numExchange * var
+            
+            numBottles += var
             
         return res + numBottles
