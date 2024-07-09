@@ -1,12 +1,14 @@
 class Solution:
     def majorityElement(self, nums: List[int]) -> int:
-        
-        dicta = {}
-        for i in nums:
-            if i not in dicta:
-                dicta[i] = 1
-            else:
-                dicta[i] += 1
-                
-        return max(dicta, key=lambda key: dicta[key])
+        count = 0
+        candidate = 0
+        for x in nums :
+            if(count == 0):
+                candidate = x 
+            if(x == candidate): 
+                count += 1
+            else : 
+                count -= 1
+            
+        return candidate
         
