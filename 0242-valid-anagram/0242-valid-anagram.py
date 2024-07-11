@@ -8,7 +8,7 @@ class Solution:
         s = sorted(s)
         t = sorted(t)
         
-        for i in range(len(s)):
+        for i in range(n):
             
             if s[i] != t[i]:
                 return False
