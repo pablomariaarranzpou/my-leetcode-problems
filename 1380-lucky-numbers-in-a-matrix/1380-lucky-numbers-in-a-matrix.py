@@ -5,8 +5,9 @@ class Solution:
             maxi = 0
             for j in range(len(matrix)):
                 minims.add(min(matrix[j]))
-                if matrix[j][i] > maxi:
-                    maxi = matrix[j][i]       
+                v = matrix[j][i]
+                if v > maxi:
+                    maxi = v       
             if maxi in minims:
                 return [maxi]   
         return []      
