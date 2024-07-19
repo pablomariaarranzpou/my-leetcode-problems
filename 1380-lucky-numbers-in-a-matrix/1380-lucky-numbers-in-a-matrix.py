@@ -8,10 +8,5 @@ class Solution:
                 if matrix[j][i] > maxi:
                     maxi = matrix[j][i]       
             if maxi in minims:
-                return [maxi]
-            
-        return []
-            
-            
-            
-        
+                return [maxi]   
+        return []      
