@@ -3,13 +3,12 @@ class Solution:
         
         minims = set()
         maxs = set()
-        
-        for i in range(len(matrix)):
-            minims.add(min(matrix[i]))
+            
             
         for i in range(len(matrix[0])):
             maxi = 0
             for j in range(len(matrix)):
+                minims.add(min(matrix[j]))
                 if matrix[j][i] > maxi:
                     maxi = matrix[j][i]
                     
