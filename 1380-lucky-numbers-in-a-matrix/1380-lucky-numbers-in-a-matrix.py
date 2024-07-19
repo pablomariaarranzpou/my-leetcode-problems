@@ -9,6 +9,8 @@ class Solution:
                 if matrix[j][i] > maxi:
                     maxi = matrix[j][i]       
             maxs.add(maxi)
+            if maxi in minims:
+                return [maxi]
             
         return minims & maxs
             
