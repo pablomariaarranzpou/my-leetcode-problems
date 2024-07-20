@@ -6,7 +6,15 @@ class Solution:
             for j in range(len(colSum)):
                 r_v = rowSum[i]
                 c_v = colSum[j]
-                if(r_v == 0 or r_v <= c_v):
+                if(r_v == 0):
+                    r.append(r_v)
+                    rowSum[i] -= r_v
+                    colSum[j] -= r_v
+                elif(c_v == 0):
+                    r.append(c_v)
+                    rowSum[i] -= c_v
+                    colSum[j] -= c_v
+                elif(r_v <= c_v):
                     r.append(r_v)
                     rowSum[i] -= r_v
                     colSum[j] -= r_v
