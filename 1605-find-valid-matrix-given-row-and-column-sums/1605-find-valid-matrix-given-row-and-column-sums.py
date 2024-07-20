@@ -4,10 +4,17 @@ class Solution:
         for i in range(len(rowSum)):
             r = []
             for j in range(len(colSum)):
-                minimum = min(rowSum[i], colSum[j])
-                r.append(minimum)
-                rowSum[i] -= minimum
-                colSum[j] -= minimum
+                r_v = rowSum[i]
+                c_v = colSum[j]
+                if(r_v < c_v):
+                    r.append(r_v)
+                    rowSum[i] -= r_v
+                    colSum[j] -= r_v
+                else:
+                    r.append(c_v)
+                    rowSum[i] -= c_v
+                    colSum[j] -= c_v
+                    
             m.append(r)           
         return m
                 
