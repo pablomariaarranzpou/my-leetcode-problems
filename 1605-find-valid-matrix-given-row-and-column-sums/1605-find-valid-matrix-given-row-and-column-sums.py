@@ -21,10 +21,6 @@ class Solution:
                 else:
                     r.append(c_v)
                     rowSum[i] -= c_v
-                    colSum[j] -= c_v
-                    
+                    colSum[j] -= c_v     
             m.append(r)           
-        return m
-                
-    
-        
+        return m        
