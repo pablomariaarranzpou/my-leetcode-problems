@@ -1,23 +1,15 @@
 class Solution:
     def restoreMatrix(self, rowSum: List[int], colSum: List[int]) -> List[List[int]]:
-        
-        dp = []
-        
+        m = []
         for i in range(len(rowSum)):
-            
-            row = []
+            r = []
             for j in range(len(colSum)):
-                
                 minimum = min(rowSum[i], colSum[j])
-                
-                row.append(minimum)
-                
+                r.append(minimum)
                 rowSum[i] -= minimum
                 colSum[j] -= minimum
-            dp.append(row)
-                
-                        
-        return dp
+            m.append(r)           
+        return m
                 
     
         
