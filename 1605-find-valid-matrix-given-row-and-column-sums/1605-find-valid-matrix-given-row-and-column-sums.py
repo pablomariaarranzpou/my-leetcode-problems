@@ -3,8 +3,6 @@ class Solution:
         
         dp = [[0 for j in range(len(colSum))] for i in range(len(rowSum))]
         
-        print(dp)
-        
         for i in range(len(rowSum)):
             
             for j in range(len(colSum)):
