@@ -14,7 +14,7 @@ class Solution:
                     r.append(c_v)
                     rowSum[i] -= c_v
                     colSum[j] -= c_v
-                elif(r_v <= c_v):
+                elif(r_v < c_v):
                     r.append(r_v)
                     rowSum[i] -= r_v
                     colSum[j] -= r_v
