@@ -5,12 +5,12 @@ class Solution:
         dicti = {}
         
         for i, num in enumerate(nums):
-            
             if num not in dicti.keys():
                 dicti[num] = [i]
                 
             else:
                 dicti[num].append(i)
+        
         
         
         for i in range(len(nums)):
