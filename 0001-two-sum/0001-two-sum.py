@@ -11,11 +11,12 @@ class Solution:
             else:
                 dicti[num].append(i)
         
-        
+        nums = sorted(nums)
         
         for i in range(len(nums)):
             opt = target - nums[i]
             if opt in nums_s:
+                i = dicti[nums[i]][0]
                 for j in dicti[opt]:
                     if j != i:
                         return [j, i]
