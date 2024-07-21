@@ -6,7 +6,8 @@ class Solution:
         for i in range(len(nums)):
             opt = target - nums[i]
             if(opt in nums_s):
-                if nums.index(opt) != i:
-                    return [nums.index(opt), i]
+                index = nums.index(opt)
+                if index != i:
+                    return [index, i]
             
   
