@@ -3,24 +3,16 @@ class Solution:
         """
         Do not return anything, modify nums in-place instead.
         """
-        
-        r, w = 0, 0
-        
-            
+        dicta = {0:0,1:0,2:0}
         for i in nums:
-            
-            if i == 0:
-                r += 1
-            elif i == 1:
-                w += 1
-            
+            dicta[i] +=1
 
-                
-        nums[:r] = [0] * r
-        
-        nums[r:w+r] = [1] * w
-        
-        nums[w+r:] = [2] * (len(nums) - w - r)
+        index = 0
+        for i, j in dicta.items():
+            for _ in range(j):
+                nums[index] = i
+                index+=1
+        return nums
         
             
             
