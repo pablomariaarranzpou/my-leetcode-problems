@@ -5,6 +5,7 @@ class Solution:
         """
         
         r, w = 0, 0
+        
             
         for i in nums:
             
@@ -12,6 +13,7 @@ class Solution:
                 r += 1
             elif i == 1:
                 w += 1
+            
 
                 
         nums[:r] = [0] * r
