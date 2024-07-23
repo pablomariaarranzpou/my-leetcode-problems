@@ -14,9 +14,7 @@ class Solution:
         for i in dicta.keys():
             values.append((dicta[i], i))
             
-        values = sorted(values, key = lambda x:(x[0], -x[1]))
-        
-        for i in values:
+        for i in sorted(values, key = lambda x:(x[0], -x[1])):
             res += ([i[1]]*i[0])
 
         return res
