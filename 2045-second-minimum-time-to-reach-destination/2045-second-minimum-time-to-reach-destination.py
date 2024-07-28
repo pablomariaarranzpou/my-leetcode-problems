@@ -29,11 +29,11 @@ class Solution:
                 
             for neihgbour in graph[node]:
                 
-                
-                new_time = act_time + time
 
                 if (act_time // change) % 2 == 1:
                     new_time = (act_time // change + 1) * change + time
+                else:
+                    new_time = act_time + time
                 
                 if new_time < distance[neihgbour][0]:
                     distance[neihgbour][1] = distance[neihgbour][0]
