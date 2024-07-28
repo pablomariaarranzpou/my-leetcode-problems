@@ -3,7 +3,6 @@ class Solution:
     def secondMinimum(self, n: int, edges: List[List[int]], time: int, change: int) -> int:
         
         pq = [(0, 1)]
-        visited = set()
         graph = {}
         distance = {i: [float('inf'), float('inf')] for i in range(1, n + 1)}
         distance[1][0] = 0
