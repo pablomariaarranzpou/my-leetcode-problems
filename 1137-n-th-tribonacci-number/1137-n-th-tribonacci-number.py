@@ -8,13 +8,15 @@ class Solution:
         if n < 3:
             return n - 1
 
-        dp = [0 for i in range(n + 1)]
-        dp[0] = 0
-        dp[1] = 1
-        dp[2] = 1
+        a = 0
+        b = 1
+        c = 1
 
         for i in range(3, n+1):
             
-            dp[i] = dp[i-1] + dp[i-2] + dp[i-3]
+            aux = a + b + c
+            a = b
+            b = c
+            c = aux
 
-        return dp[-1]
+        return c
