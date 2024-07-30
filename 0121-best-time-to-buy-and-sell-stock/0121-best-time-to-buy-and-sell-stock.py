@@ -3,12 +3,16 @@ class Solution:
         
         if not prices:
             return 0
-        min_p = prices[0]
-        max_p = 0
-
+        min_price = prices[0]
+        max_prof = 0
+        
+        
         for i in range(1, len(prices)):
-
-            min_p = min(min_p, prices[i])
-            max_p = max(max_p, prices[i] - min_p)
-
-        return max_p
+            
+            min_price = min(min_price, prices[i])
+            max_prof = max(max_prof, prices[i] - min_price)
+            
+        
+        return max_prof
+        
+        
