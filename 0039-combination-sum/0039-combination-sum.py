@@ -1,36 +1,23 @@
 class Solution:
     def combinationSum(self, candidates: List[int], target: int) -> List[List[int]]:
         results = []
-        seen = set()
-        self.auxiliar_function(0, [], candidates, target, results)
+        candidates.sort()
+        self.auxiliar_function(0, [], candidates, target, results, 0)
         return results
         
-       
-    def auxiliar_function(self, suma, lista, candidates, target, results):
-        
-        
+    def auxiliar_function(self, suma, lista, candidates, target, results, start):
         if suma == target:
-            sort = sorted(lista)
-            if sorted(sort) not in results:
-                results.append(sort)
+            results.append(lista.copy())
             return
         
-        else:
+        for i in range(start, len(candidates)):
+            candidate = candidates[i]
+            if suma + candidate > target:
+                break
             
-            for candidate in candidates:
-                
-                if suma + candidate <= target:
-                    
-                    lista.append(candidate)
-                    
-                    suma += candidate
-                    
-                    self.auxiliar_function(suma, lista, candidates, target, results)
-                    
-                    suma -= candidate
-                    lista.pop()
-                    
-                    
+            lista.append(candidate)
+            self.auxiliar_function(suma + candidate, lista, candidates, target, results, i) 
+            lista.pop()
                     
                     
                     
