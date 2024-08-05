@@ -21,14 +21,14 @@ class Solution:
                 
                 if suma + candidate <= target:
                     
-                    lista_2 = lista.copy()
-                    lista_2.append(candidate)
+                    lista.append(candidate)
                     
                     suma += candidate
                     
-                    self.auxiliar_function(suma, lista_2, candidates, target, results)
+                    self.auxiliar_function(suma, lista, candidates, target, results)
                     
                     suma -= candidate
+                    lista.pop()
                     
                     
                     
