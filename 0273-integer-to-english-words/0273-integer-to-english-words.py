@@ -28,6 +28,7 @@ class Solution:
             1000000: "Million",
             1000000000: "Billion"
         }
+        dic_keys = sorted(dic.keys(), reverse=True)
         
         
         def auxiliar_function(num, word):
@@ -38,28 +39,18 @@ class Solution:
                 self.word += " " + nums[num]
             else:
             
-                for div in sorted(dic.keys(), reverse=True):
+                for div in dic_keys:
                     
                     if num / div < 1:
                         continue
-                    
-                    if div >= 100:
-                        
+                    elif div >= 100:
                         calc = num // div
                         mod = num % div
-                        
                         auxiliar_function(calc, self.word)
-                        self.word += " " + dic[div]
-                        if mod != 0:
-                            auxiliar_function(mod, self.word)
                     else:
-                        calc = div
                         mod = num - div
-                        
-                        self.word += " " + dic[div]
-                        
-                        if mod != 0:
-                            auxiliar_function(mod, self.word)
+                    self.word += " " + dic[div] 
+                    auxiliar_function(mod, self.word)
                     break
                                   
         auxiliar_function(num, self.word)
