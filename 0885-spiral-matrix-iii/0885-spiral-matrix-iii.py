@@ -11,6 +11,12 @@ class Solution:
         
         while radio <= max_radio:
             
+            ini_i, ini_j = i, j
+            
+            secondary = [[], []]
+            
+            
+            
             if j < cols and i < rows and i >= 0 and j >= 0:
                 path.append([i, j])
                     
@@ -25,8 +31,9 @@ class Solution:
                 # izquierda restamos una columna
                 if j - 1 < cols and i < rows and i >= 0 and j - 1>= 0:
                     path.append([i, j - 1])
-                j -= 1
                     
+                j -= 1
+                
             while i - 1 > rStart - radio - 1:
                 # arriba restamos una row
                 
@@ -41,7 +48,29 @@ class Solution:
                 if j + 1 < cols and i < rows and i >= 0 and j + 1 >= 0:
                     path.append([i, j + 1])
                 j += 1
-                    
+            
+            print(secondary)
+            path += secondary[0]
+
+            
+            """
+            while i - 1 > rStart - radio - 1:
+                # arriba restamos una row
+                
+                if j < cols and i - 1 < rows and i - 1 >= 0 and j >= 0:
+                    path.append([i - 1, j])
+                i -= 1
+                     
+            while j + 1 < cStart + radio + 1:
+                
+                # derecha sumamos una col
+                
+                if j + 1 < cols and i < rows and i >= 0 and j + 1 >= 0:
+                    path.append([i, j + 1])
+                j += 1
+            """
+            
+                  
             j += 1
             radio += 1
             
