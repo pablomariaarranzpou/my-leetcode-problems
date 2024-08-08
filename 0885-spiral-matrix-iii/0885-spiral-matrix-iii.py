@@ -10,8 +10,6 @@ class Solution:
         j = cStart
         path = []
         
-        visited = set()
-        
         while radio <= max_radio:
             
             if j < cols and i < rows and i >= 0 and j >= 0:
