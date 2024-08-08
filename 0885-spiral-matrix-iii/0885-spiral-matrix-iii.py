@@ -4,7 +4,6 @@ class Solution:
         
         radio = 0
         max_radio = max(max(rows - rStart, rStart), max(cStart, cols - cStart))
-        
         i = rStart
         j = cStart
         path = []
@@ -12,11 +11,7 @@ class Solution:
         while radio <= max_radio:
             
             ini_i, ini_j = i, j
-            
-            secondary = [[], []]
-            
-            
-            
+
             if j < cols and i < rows and i >= 0 and j >= 0:
                 path.append([i, j])
                     
@@ -48,9 +43,6 @@ class Solution:
                 if j + 1 < cols and i < rows and i >= 0 and j + 1 >= 0:
                     path.append([i, j + 1])
                 j += 1
-            
-            print(secondary)
-            path += secondary[0]
 
             
             """
