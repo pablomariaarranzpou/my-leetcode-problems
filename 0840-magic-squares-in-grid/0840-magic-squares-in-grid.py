@@ -50,8 +50,7 @@ class Solution:
             
             if suma_d2 != suma_r2:
                 return False
-        
-            
+
             return True
                
             
@@ -62,12 +61,16 @@ class Solution:
         for i in range(rows - 2):
             for j in range(cols - 2):
                 
-                matrix = [[grid[a][b] for b in range(j, j + 3)] for a in range(i, i + 3)]
+                matrix = []
+                for a in range(i, i + 3):
+                    row = []
+                    for b in range(j, j + 3):
+                        row.append(grid[a][b])
+                    matrix.append(row)
                 
                 if isMagic(matrix):
                     total += 1
                     
-        
         return total
                 
                 
