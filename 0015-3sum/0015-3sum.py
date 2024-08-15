@@ -23,6 +23,7 @@ class Solution:
                 else:
                     sol.add((nums[i], nums[left], nums[right]))
                     right -= 1
+                    left += 1
                     
         return sol
                     
