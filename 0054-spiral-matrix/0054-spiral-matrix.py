@@ -1,51 +1,34 @@
 class Solution:
     def spiralOrder(self, matrix: List[List[int]]) -> List[int]:
         
-        cols = len(matrix[0])
-        rows = len(matrix)
-        visited = set()
+        if not matrix:
+            return []
         
-        i, j, r, v = 0, 0, 0, 0
-        
+        rows, cols = len(matrix), len(matrix[0])
+        top, bottom = 0, rows - 1
+        left, right = 0, cols - 1
         res = []
         
-        while r < min(rows, cols):
+        while top <= bottom and left <= right:
             
-            if (i, j) not in visited:
-                res.append(matrix[i][j])
-                visited.add((i,j))
+            for j in range(left, right + 1):
+                res.append(matrix[top][j])
+            top += 1
+            
+            for i in range(top, bottom + 1):
+                res.append(matrix[i][right])
+            right -= 1
+            
+            if top <= bottom:
+                for j in range(right, left - 1, -1):
+                    res.append(matrix[bottom][j])
+                bottom -= 1
+            
+            if left <= right:
+                for i in range(bottom, top - 1, -1):
+                    res.append(matrix[i][left])
+                left += 1
         
-            while j + 1 < cols - r:
-                j += 1
-                if (i, j) not in visited:
-                    res.append(matrix[i][j])
-                    visited.add((i,j))
-                    
-                    
-
-            while i + 1 < rows - r:
-                i += 1
-                if (i, j) not in visited:
-                    res.append(matrix[i][j])
-                    visited.add((i,j))
-
-            while j - 1 >= r:
-                j -= 1
-                if (i, j) not in visited:
-                    res.append(matrix[i][j])
-                    visited.add((i,j))
-                
-
-                
-            while i - 1 >= r + 1:
-                i -= 1
-                if (i, j) not in visited:
-                    res.append(matrix[i][j])
-                    visited.add((i,j))
-
-            
-            j += 1
-            r += 1
-            
         return res
+
               
