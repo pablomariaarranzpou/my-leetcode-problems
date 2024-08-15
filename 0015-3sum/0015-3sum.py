@@ -22,7 +22,7 @@ class Solution:
                     
                 else:
                     sol.add((nums[i], nums[left], nums[right]))
-                    left += 1
+                    right -= 1
                     
         return sol
                     
