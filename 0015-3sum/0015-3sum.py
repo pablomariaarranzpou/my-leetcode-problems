@@ -4,7 +4,7 @@ class Solution:
         nums = sorted(nums)
         sol = set()
         
-        for i in range(len(nums)):
+        for i in range(len(nums) - 2):
             
             left = i + 1
             
