@@ -2,8 +2,7 @@ class Solution:
     def threeSum(self, nums: List[int]) -> List[List[int]]:
         
         nums = sorted(nums)
-        sol = []
-        visited = set()
+        sol = set()
         
         for i in range(len(nums)):
             
@@ -22,9 +21,7 @@ class Solution:
                     left += 1
                     
                 else:
-                    if((nums[i], nums[left], nums[right]) not in visited):
-                        visited.add((nums[i], nums[left], nums[right]))
-                        sol.append([nums[i], nums[left], nums[right]])
+                    sol.add((nums[i], nums[left], nums[right]))
                     right -= 1
                     left += 1
                     
