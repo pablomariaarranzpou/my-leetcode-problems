@@ -20,7 +20,7 @@ class Solution:
                 max_value_index = index
                 second_max_value = aux
                 
-            elif subarray[-1] > second_max_value:
+            elif cand_max > second_max_value:
                 second_max_value = cand_max
                 
             if cand_min < min_value:
