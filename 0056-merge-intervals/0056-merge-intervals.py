@@ -13,10 +13,6 @@ class Solution:
         for i in range(1, len(intervals)):
             
             next_i_min, next_i_max = intervals[i]
-            
-            if intervals[i][0] <= mini <= intervals[i][0]:
-                
-                mini = intervals[i][0]
       
             if intervals[i][0] <= maxi <= intervals[i][1]:
                 maxi = intervals[i][1]
