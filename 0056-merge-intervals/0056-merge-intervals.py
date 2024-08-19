@@ -14,17 +14,17 @@ class Solution:
             
             next_i_min, next_i_max = intervals[i]
       
-            if intervals[i][0] <= maxi <= intervals[i][1]:
-                maxi = intervals[i][1]
+            if next_i_min <= maxi <= next_i_max:
+                maxi = next_i_max
                 
-            if mini <= intervals[i][0] <= maxi or mini <= intervals[i][1] <= maxi:
+            if mini <= next_i_min <= maxi or mini <= next_i_max <= maxi:
                 pass
                 
             else:
                 
                 res.append([mini, maxi])
-                maxi = intervals[i][1]
-                mini = intervals[i][0]
+                maxi = next_i_max
+                mini = next_i_min
                 
             if(i == len(intervals) - 1):
                 res.append([mini, maxi])  
