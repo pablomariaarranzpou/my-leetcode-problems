@@ -5,12 +5,12 @@ class Solution:
         hashmp = {}
         for index, card in enumerate(cards):
             if card in hashmp:
-                calc = index - hashmp[card][-1]
+                calc = index - hashmp[card]
                 if calc < minimum:
                     minimum = calc
-                hashmp[card].append(index)
+                hashmp[card] = index
             else:
-                hashmp[card] = [index]
+                hashmp[card] = index
         
         if minimum == float('inf'):
             return -1
