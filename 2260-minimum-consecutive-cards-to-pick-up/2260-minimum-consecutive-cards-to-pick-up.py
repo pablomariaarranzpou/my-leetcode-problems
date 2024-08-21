@@ -4,7 +4,7 @@ class Solution:
         minimum = float('inf')
         hashmp = {}
         for index, card in enumerate(cards):
-            if card in hashmp.keys():
+            if card in hashmp:
                 calc = index - hashmp[card][-1]
                 if calc < minimum:
                     minimum = calc
