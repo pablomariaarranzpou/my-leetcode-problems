@@ -4,13 +4,11 @@ class Solution:
         
         for circle in circles:
             x, y, r = circle
+            
             for i in range(-r, r + 1):
-                for j in range(-r, r + 1):
-                    if i**2 + j**2 <= r**2:
-                        points.add((x + i, y + j))
-                        points.add((x - i, y + j))
-                        points.add((x + i, y - j))
-                        points.add((x - i, y - j))
+                max_j = int((r**2 - i**2)**0.5)
+                for j in range(-max_j, max_j + 1):
+                    points.add((x + i, y + j))
         
         return len(points)
 
