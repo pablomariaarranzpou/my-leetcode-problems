@@ -9,8 +9,6 @@ class Solution:
         max_l = 0
         mapa = {}
         for word in paragraph:
-            
-            word = ''.join(e for e in word if e.isalnum())
 
             if word in banned:
                 continue
