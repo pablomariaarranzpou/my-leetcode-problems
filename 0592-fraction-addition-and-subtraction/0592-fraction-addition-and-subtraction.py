@@ -39,9 +39,10 @@ class Solution:
             numerador_resultado = numerador_resultado * int(divs[i]) + int(denoms[i]) * denominador_resultado
             denominador_resultado = denominador_comun
             
-            factor_comun = gcd(numerador_resultado, denominador_resultado)
-            numerador_resultado //= factor_comun
-            denominador_resultado //= factor_comun
+            
+        factor_comun = gcd(numerador_resultado, denominador_resultado)
+        numerador_resultado //= factor_comun
+        denominador_resultado //= factor_comun
         
         return f"{numerador_resultado}/{denominador_resultado}"
 
