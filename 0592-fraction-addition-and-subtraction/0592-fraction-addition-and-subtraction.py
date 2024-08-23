@@ -36,7 +36,7 @@ class Solution:
 
         for i in range(1, len(denoms)):
             denominador_comun = denominador_resultado * int(divs[i])
-            numerador_resultado = numerador_resultado * int(divs[i]) + int(denoms[i]) * denominador_resultado
+            numerador_resultado = numerador_resultado * (denominador_comun//denominador_resultado) + int(denoms[i]) * (denominador_comun//int(divs[i]))
             denominador_resultado = denominador_comun
             
             
