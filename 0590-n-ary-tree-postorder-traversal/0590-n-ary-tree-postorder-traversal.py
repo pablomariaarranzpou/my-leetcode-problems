@@ -14,19 +14,22 @@ class Solution:
         if not root:
             return []
         
-        def _aux(node):
+        stack = [root]
+        
+        
+        while stack:
             
-            
-            for child in node.children:
-                
-                _aux(child)
-                
+            node = stack.pop()
             res.append(node.val)
             
             
-        _aux(root)
         
-        return res
+            for child in node.children:
+                
+                stack.append(child)
+                
+               
+        return res[::-1]
                 
                 
         
