@@ -1,6 +1,8 @@
 class Solution:
     def areAlmostEqual(self, s1: str, s2: str) -> bool:
         
+        if s1 == s2:
+            return True
         
         diff_1 = -1
         diff_2 = -1
