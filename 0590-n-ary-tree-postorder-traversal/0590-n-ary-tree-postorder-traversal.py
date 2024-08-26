@@ -20,7 +20,7 @@ class Solution:
         while stack:
             
             node = stack.pop()
-            res.append(node.val)
+            res = [node.val] + res
             
             
         
@@ -29,7 +29,7 @@ class Solution:
                 stack.append(child)
                 
                
-        return res[::-1]
+        return res
                 
                 
         
