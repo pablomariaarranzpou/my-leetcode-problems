@@ -26,9 +26,6 @@ class Solution:
                     min_time = act_time
                 elif min_time < act_time:
                     break
-            
-            if act_time > time_node[act_node]:
-                continue
 
             for neig_node, neig_time in graph[act_node]:
                 
