@@ -16,15 +16,15 @@ class Solution:
             else:
                 for i in range(n):
                     
-                    if i > 0 and nums[i] == nums[i-1] and not used[i-1]:
+                    # si el numero actual es igual al anterior y el anterior no lo he usado este tampoco
+                    if used[i] or i > 0 and nums[i] == nums[i-1] and not used[i-1]:
                         continue
-                    
-                    if not used[i]:
-                        actual.append(nums[i])
-                        used[i] = True
-                        _aux(actual, used)
-                        used[i] = False
-                        actual.pop(-1)
+            
+                    actual.append(nums[i])
+                    used[i] = True
+                    _aux(actual, used)
+                    used[i] = False
+                    actual.pop(-1)
                    
         _aux([], [False] * len(nums))
                    
