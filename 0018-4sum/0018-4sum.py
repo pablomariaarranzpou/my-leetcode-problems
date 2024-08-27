@@ -6,6 +6,10 @@ class Solution:
         seen = set()
         
         for i in range(len(nums) - 3):
+            
+            if i>0 and nums[i] == nums[i-1]:
+                continue
+                
             for j in range(i + 1, len(nums) - 2):
                 
                 k = j + 1
