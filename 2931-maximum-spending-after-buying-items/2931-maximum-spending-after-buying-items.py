@@ -5,21 +5,15 @@ class Solution:
         n = len(values)
         m = len(values[0])
         
+        values_a = []
+        for value in values:
+            values_a += value
+            
+        values_a = sorted(values_a)
         
         for d in range(1, n * m + 1):
             
-            min_value = float('inf')
-            min_shop = None
-            act = []
-            
-            for i in range(len(values)):
-                if values[i]:
-                    if min_value > values[i][-1]:
-                        min_shop = i
-                        min_value = values[i][-1]
-                        
-                    
-            c += values[min_shop].pop() * d
+            c += values_a[d - 1] * d
                 
         return c
                         
