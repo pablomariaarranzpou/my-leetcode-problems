@@ -3,6 +3,7 @@ class Solution:
         
         res = []
         nums = sorted(nums)
+        seen = set()
         
         for i in range(len(nums) - 3):
             for j in range(i + 1, len(nums) - 2):
@@ -20,7 +21,8 @@ class Solution:
                         
                     else:
                         
-                        if [nums[i], nums[j], nums[k], nums[h]] not in res:
+                        if (nums[i], nums[j], nums[k], nums[h]) not in seen:
+                            seen.add((nums[i], nums[j], nums[k], nums[h]))
                             res.append([nums[i], nums[j], nums[k], nums[h]])
                         k += 1
                         h -= 1
