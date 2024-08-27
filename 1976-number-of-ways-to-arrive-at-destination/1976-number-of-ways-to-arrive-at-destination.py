@@ -12,6 +12,7 @@ class Solution:
         
         time_node[0] = 0
         pq = []
+        min_time = None
         heappush(pq, (0, 0))
         ways = [[0] for i in range(n)]
         ways[0] = 1
@@ -19,6 +20,14 @@ class Solution:
         while pq:
             
             act_time, act_node = heappop(pq)
+            
+            if act_node == n - 1:
+                
+                if not min_time:
+                    min_time = act_time
+                    
+                elif min_time < act_time:
+                    break
             
             if act_time > time_node[act_node]:
                 continue
