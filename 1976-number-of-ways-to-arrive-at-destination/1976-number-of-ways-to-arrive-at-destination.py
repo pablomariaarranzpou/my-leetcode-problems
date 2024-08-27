@@ -22,10 +22,8 @@ class Solution:
             act_time, act_node = heappop(pq)
             
             if act_node == n - 1:
-                
                 if not min_time:
                     min_time = act_time
-                    
                 elif min_time < act_time:
                     break
             
