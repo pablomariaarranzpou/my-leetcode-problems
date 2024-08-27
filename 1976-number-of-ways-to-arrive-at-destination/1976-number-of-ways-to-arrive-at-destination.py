@@ -24,6 +24,8 @@ class Solution:
             
             act_time, act_node = heappop(pq)
             
+            if act_time > time_node[act_node]:
+                continue
 
             for neig_node, neig_time in graph[act_node]:
                 
