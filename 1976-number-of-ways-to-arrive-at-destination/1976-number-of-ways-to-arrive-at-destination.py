@@ -6,17 +6,13 @@ class Solution:
         graph = {i: [] for i in range(n)}
         
         for from_n, to_n, time_i in roads:
-            
             graph[from_n].append((to_n, time_i))
             graph[to_n].append((from_n, time_i))
             
         
         time_node[0] = 0
-        visited = set()
         pq = []
-        min_time = None
         heappush(pq, (0, 0))
-        c = 0
         ways = [[0] for i in range(n)]
         ways[0] = 1
         
