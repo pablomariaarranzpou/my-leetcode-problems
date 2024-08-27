@@ -3,7 +3,6 @@ class Solution:
         
         res = []
         nums = sorted(nums)
-        seen = set()
         
         for i in range(len(nums) - 3):
             
@@ -14,6 +13,7 @@ class Solution:
                 
                 if j > i + 1 and nums[j] == nums[j-1]:
                     continue
+                    
                 k = j + 1
                 h = len(nums) - 1
                 while k < h:
