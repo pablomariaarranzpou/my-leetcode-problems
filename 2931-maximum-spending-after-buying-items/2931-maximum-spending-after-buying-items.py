@@ -5,18 +5,21 @@ class Solution:
         n = len(values)
         m = len(values[0])
         
-        pq = []
-        
-        for i in range(len(values)):
-            for j in range(len(values[0])):
-                
-                heappush(pq, (values[i][j], i))
         
         for d in range(1, n * m + 1):
             
-            val, shop = heappop(pq)
-                 
-            c += values[shop].pop() * d
+            min_value = float('inf')
+            min_shop = None
+            act = []
+            
+            for i in range(len(values)):
+                if values[i]:
+                    if min_value > values[i][-1]:
+                        min_shop = i
+                        min_value = values[i][-1]
+                        
+                    
+            c += values[min_shop].pop() * d
                 
         return c
                         
