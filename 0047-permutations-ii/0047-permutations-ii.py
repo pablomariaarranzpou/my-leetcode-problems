@@ -4,13 +4,12 @@ class Solution:
         sol = []
         nums = sorted(nums)
         n = len(nums)
-        seen = set()
         
         
         def _aux(actual, used):
   
             
-            if len(actual) == len(nums):
+            if len(actual) == n:
                 sol.append(actual[:])
             
             else:
