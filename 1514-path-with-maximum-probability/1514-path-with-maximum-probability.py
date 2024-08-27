@@ -7,9 +7,9 @@ class Solution:
         dist = {i: float('inf') for i in range(n)}
         
         for i in range(len(edges)):
-            
-            graph[edges[i][0]].append((edges[i][1], -log(succProb[i])))
-            graph[edges[i][1]].append((edges[i][0], -log(succProb[i])))
+            prob = -log(succProb[i])
+            graph[edges[i][0]].append((edges[i][1], prob))
+            graph[edges[i][1]].append((edges[i][0], prob))
         
         dist[start_node] = 0
         pq = [(0,start_node)]
