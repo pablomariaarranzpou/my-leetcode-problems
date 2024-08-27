@@ -24,17 +24,9 @@ class Solution:
             
             act_time, act_node = heappop(pq)
             
-            if act_node == n - 1:
-                if not min_time:
-                    min_time = act_time
-                if act_time > min_time:
-                    break
-                else:  
-                    c += 1
-                    
 
             for neig_node, neig_time in graph[act_node]:
-                    
+                
                 calc = neig_time + act_time
                 if calc < time_node[neig_node]:
                     time_node[neig_node] = calc
