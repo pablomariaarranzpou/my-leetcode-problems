@@ -16,6 +16,6 @@ class Solution:
 
             letras_actuals.add(char)
 
-            max_l = max(max_l, len(letras_actuals))
+            max_l = max(max_l, i - last + 1)
 
         return max_l
