@@ -11,6 +11,7 @@ class Solution:
         
         dist = {start_node: 0}
         pq = [(0, start_node)]
+        
         visited = set()
         
         
@@ -25,6 +26,7 @@ class Solution:
                 visited.add(node)
             
                 for neig_node, neig_prob in graph[node]:
+                    
                     calc = prob_node + neig_prob
 
                     if calc < dist.get(neig_node, float('inf')):
