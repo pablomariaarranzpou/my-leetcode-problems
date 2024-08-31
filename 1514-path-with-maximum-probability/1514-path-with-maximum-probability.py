@@ -1,8 +1,13 @@
 class Solution:
     def maxProbability(self, n: int, edges: List[List[int]], succProb: List[float], start_node: int, end_node: int) -> float:
         
-        graph = defaultdict(list)
+        graph = {}
+        max_prob = {}
         
+        for i in range(n):
+            graph[i] = []
+            max_prob[i] = float('inf')
+
         # log(a) + log(b) + log(c) = log(a * b * c)
         for i in range(len(edges)):
             if succProb[i]:
@@ -10,8 +15,6 @@ class Solution:
                 graph[edges[i][0]].append((prob, edges[i][1]))
                 graph[edges[i][1]].append((prob, edges[i][0]))
         
-        
-        max_prob = { i : float('inf') for i in range(n)}
                 
         max_prob[start_node] = 0
         pq = [(0, start_node)]
@@ -31,16 +34,11 @@ class Solution:
                 visited.add(node)
             
                 for neig_prob, neig in graph[node]:
-
+                    
                     calc = prob_node + neig_prob
-
+                    
                     if calc < max_prob[neig]:
                         max_prob[neig] = calc
                         heapq.heappush(pq, (calc, neig))
-    
         return 0.0
-
-                        
-                        
-               
-        
+       
