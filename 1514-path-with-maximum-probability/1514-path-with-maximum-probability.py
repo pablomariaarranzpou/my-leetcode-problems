@@ -2,8 +2,6 @@ class Solution:
     def maxProbability(self, n: int, edges: List[List[int]], succProb: List[float], start_node: int, end_node: int) -> float:
         
         graph = defaultdict(list)
-        max_prob = {}
-        
         
         # log(a) + log(b) + log(c) = log(a * b * c)
         for i in range(len(edges)):
@@ -13,8 +11,7 @@ class Solution:
                 graph[edges[i][1]].append((prob, edges[i][0]))
         
         
-        for i in range(n):
-            max_prob[i] = float('inf')
+        max_prob = { i : float('inf') for i in range(n)}
                 
         max_prob[start_node] = 0
         pq = [(0, start_node)]
@@ -23,8 +20,6 @@ class Solution:
         
         
         while pq:
-            
-            
             
             prob_node, node = heapq.heappop(pq)
             
