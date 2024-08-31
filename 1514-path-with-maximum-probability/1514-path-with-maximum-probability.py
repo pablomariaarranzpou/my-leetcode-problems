@@ -4,6 +4,8 @@ class Solution:
         graph = defaultdict(list)
         max_prob = {}
         
+        
+        # log(a) + log(b) + log(c) = log(a * b * c)
         for i in range(len(edges)):
             if succProb[i]:
                 prob = -(math.log(succProb[i]))
@@ -21,6 +23,8 @@ class Solution:
         
         
         while pq:
+            
+            
             
             prob_node, node = heapq.heappop(pq)
             
