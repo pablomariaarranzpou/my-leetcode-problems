@@ -27,13 +27,17 @@ class Solution:
             if node == end_node:
                 return math.exp(-prob_node)
             
-            for neig_prob, neig in graph[node]:
-                    
-                calc = prob_node + neig_prob
+            if node not in visited:
+                
+                visited.add(node)
+            
+                for neig_prob, neig in graph[node]:
 
-                if calc < max_prob[neig]:
-                    max_prob[neig] = calc
-                    heapq.heappush(pq, (calc, neig))
+                    calc = prob_node + neig_prob
+
+                    if calc < max_prob[neig]:
+                        max_prob[neig] = calc
+                        heapq.heappush(pq, (calc, neig))
     
         return 0.0
 
