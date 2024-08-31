@@ -11,6 +11,8 @@ class Solution:
         
         dist = {start_node: 0}
         pq = [(0, start_node)]
+        visited = set()
+        
         
         while pq:
             prob_node, node = heapq.heappop(pq)
@@ -18,12 +20,16 @@ class Solution:
             if node == end_node:
                 return math.exp(-prob_node)
             
-            for neig_node, neig_prob in graph[node]:
-                calc = prob_node + neig_prob
+            if node not in visited:
                 
-                if calc < dist.get(neig_node, float('inf')):
-                    dist[neig_node] = calc
-                    heapq.heappush(pq, (calc, neig_node))
+                visited.add(node)
+            
+                for neig_node, neig_prob in graph[node]:
+                    calc = prob_node + neig_prob
+
+                    if calc < dist.get(neig_node, float('inf')):
+                        dist[neig_node] = calc
+                        heapq.heappush(pq, (calc, neig_node))
     
         return 0.0
 
