@@ -7,7 +7,10 @@ class Solution:
         for i in range(n):
             graph[i] = []
             max_prob[i] = float('inf')
-
+        
+        max_prob[start_node] = 0
+        
+        
         # log(a) + log(b) + log(c) = log(a * b * c)
         for i in range(len(edges)):
             if succProb[i]:
@@ -15,8 +18,6 @@ class Solution:
                 graph[edges[i][0]].append((prob, edges[i][1]))
                 graph[edges[i][1]].append((prob, edges[i][0]))
         
-                
-        max_prob[start_node] = 0
         pq = [(0, start_node)]
         
         visited = set()
