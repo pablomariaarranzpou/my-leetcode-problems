@@ -1,23 +1,18 @@
 class Solution:
     def construct2DArray(self, original: List[int], m: int, n: int) -> List[List[int]]:
 
-        row = []
         final = []
-        h = len(original)
         
-        if m * n != h:
+        if m * n != len(original):
             return []
         
-        for i in range(h):
-            
-            if len(row) < n:
-                row.append(original[i])
-            else:
-                final.append(row)
-                row = [original[i]]
+        for i in range(m):
+
+            start = i * n
+
+            final.append(original[start: start + n])
                 
-        if row:
-            final.append(row)
+            
                 
         return final
                 
