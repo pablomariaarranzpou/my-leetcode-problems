@@ -10,7 +10,12 @@ class Solution:
 
             start = i * n
 
-            final.append(original[start: start + n])
+            row = []
+            
+            for i in range(start, start + n):
+                row.append(original[i])
+                
+            final.append(row)
                 
             
                 
