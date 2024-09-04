@@ -11,22 +11,16 @@ class Solution:
         for i in commands:
             
             if i == -1:
-                
-                dir_i += 1
-                dir_i = dir_i % 4
+                dir_i = (dir_i  + 1)% 4
                 obst_f = False
                 
             elif i == -2:
-                
-                dir_i -= 1
-                dir_i = dir_i % 4
+                dir_i = (dir_i  - 1) % 4
                 obst_f = False
-                
             else:
                 
                 if obst_f:
                     continue
-                
                 if dir_i == 0:
                     for i in range(i):                       
                         if (pos_x - 1, pos_y) in obstacles:
