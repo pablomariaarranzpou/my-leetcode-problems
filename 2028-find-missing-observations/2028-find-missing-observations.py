@@ -1,15 +1,11 @@
 class Solution:
     def missingRolls(self, rolls: List[int], mean: int, n: int) -> List[int]:
-        
-        
-        
-                                  
-        m = len(rolls)
-        suma = mean * (m + n) - sum(rolls)
+                              
+        suma = mean * (len(rolls) + n) - sum(rolls)
         res = []
         
         if suma > 6 * n or suma < n:
-            return []
+            return res
         
         mean_d = suma // n 
         mod = suma % n
