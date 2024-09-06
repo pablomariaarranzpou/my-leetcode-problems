@@ -2,7 +2,7 @@ class Solution:
     def firstUniqChar(self, s: str) -> int:
         
         
-        dic = collections.OrderedDict()
+        dic = {}
         
         for i in range(len(s)):
             
@@ -14,10 +14,10 @@ class Solution:
                 dic[char][0] += 1 
                 
                 
-        for k, v in dic.items():
+        for char in s:
             
-            if v[0] == 1:
-                return v[1]
+            if dic[char][0] == 1:
+                return dic[char][1]
             
         return -1
                 
