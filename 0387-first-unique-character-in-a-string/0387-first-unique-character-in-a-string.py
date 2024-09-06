@@ -3,7 +3,6 @@ class Solution:
         
         
         dic = {}
-        
         for i in range(len(s)):
             
             char = s[i]
@@ -14,9 +13,7 @@ class Solution:
                 dic[char] += 1 
                 
                 
-        for i in range(len(s)):
-            
-            char = s[i]
+        for i, char in enumerate(s):
             
             if dic[char] == 1:
                 return i
