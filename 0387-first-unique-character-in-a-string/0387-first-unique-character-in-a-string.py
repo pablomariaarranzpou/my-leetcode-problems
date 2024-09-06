@@ -9,15 +9,17 @@ class Solution:
             char = s[i]
             
             if char not in dic:
-                dic[char] = [1, i]
+                dic[char] = 1
             else:
-                dic[char][0] += 1 
+                dic[char] += 1 
                 
                 
-        for char in s:
+        for i in range(len(s)):
             
-            if dic[char][0] == 1:
-                return dic[char][1]
+            char = s[i]
+            
+            if dic[char] == 1:
+                return i
             
         return -1
                 
