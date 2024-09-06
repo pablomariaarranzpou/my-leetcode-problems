@@ -9,10 +9,18 @@ class Solution:
         if not root:
             return None
         
-        root.left, root.right = root.right, root.left
+        node = root
         
-        self.invertTree(root.left)
-        self.invertTree(root.right)
+        def _aux(node):
+        
+            node.left, node.right = node.right, node.left
+            
+            if node.left:
+                _aux(node.left)
+            if node.right:
+                _aux(node.right)
+        
+        _aux(root)
         
         return root
                 
