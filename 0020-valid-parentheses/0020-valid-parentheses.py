@@ -1,23 +1,26 @@
 class Solution:
     def isValid(self, s: str) -> bool:
-
+        
         stack = []
-        parenthesis = {')':'(', ']':'[', '}':'{'}
-
-        if len(s) == 1:
-            return False
-
-        for i in s:
-
-            if i in parenthesis.keys() and len(stack) != 0:
-                last = stack.pop()
-
-                if(last != parenthesis[i]):
-                    return False
+        
+        opened = {'[':']', '(':')', '{':'}'}
+        
+        for p in s:
+            
+            if p in opened.keys():
+                stack.append(p)
             else:
-                stack.append(i)
-
-        if(len(stack) != 0):
-
+                
+                if not stack:
+                    return False
+                
+                if opened[stack.pop()] != p:
+                    return False
+                
+                
+        if not stack:
+            return True
+        
+        else:
             return False
-        return True
+        
