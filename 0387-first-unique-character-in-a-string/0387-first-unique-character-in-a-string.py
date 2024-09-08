@@ -1,24 +1,22 @@
 class Solution:
     def firstUniqChar(self, s: str) -> int:
         
+        hashmap = {}
         
-        dic = defaultdict(int)
-        
-        
-        for i in range(len(s)):
-            dic[s[i]] += 1 
-                
-                
-        for i, char in enumerate(s):
+        for char in s:
             
-            if dic[char] == 1:
-                return i
+            if char not in hashmap:
+                hashmap[char] = 1
+                
+            else:
+                hashmap[char] += 1
+                
+        for index, char in enumerate(s):
+            
+            if hashmap[char] == 1:
+                return index
             
         return -1
-                
-                
-                
             
             
-            
-            
+        
