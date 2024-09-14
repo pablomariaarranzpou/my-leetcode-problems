@@ -10,4 +10,3 @@ class Solution:
             
         nums1.sort()
                 
-                
