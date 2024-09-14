@@ -1,15 +1,23 @@
 class Solution:
     def removeDuplicates(self, nums: List[int]) -> int:
         
-        i=0
+        k = 0
+        hashmap = {}
         
-        while i < len(nums) - 2:
+        for i in range(len(nums)):
             
-            if(nums[i] == nums[i+1]):
-                
-                if nums[i+1] == nums[i+2]:
-                    nums.remove(nums[i + 1])
-                    continue
+            num = nums[i]
             
+            if num not in hashmap:
+                hashmap[num] = 1
+                nums[k] = nums[i]
+                k += 1
+            elif hashmap[num] == 1:
+                hashmap[num] += 1
+                nums[k] = nums[i]
+                k+= 1
             
-            i+=1
+        return k        
+
+         
+        
