@@ -1,34 +1,33 @@
 class TwoSum:
 
     def __init__(self):
-        self.list = []
+        self.dict = {}
         
 
     def add(self, number: int) -> None:
         
-        self.list.append(number)
-        self.list.sort()
-        
+        if number not in self.dict:
+            self.dict[number] = 1     
+        else:
+            self.dict[number] += 1
 
     def find(self, value: int) -> bool:
         
-        i = 0
-        j = len(self.list) - 1
-        
-        while i < j:
+        for i in self.dict:
             
-            calc = self.list[i] + self.list[j]
+            diff = value - i 
             
-            if calc == value:
+            if diff in self.dict:
+                
+                if diff == i and self.dict[i] == 1:
+                    continue
                 return True
+                
+                
             
-            elif calc < value:
-                i += 1
+            
                 
-            else:
-                j -= 1
-                
-                
+            
         return False
             
             
