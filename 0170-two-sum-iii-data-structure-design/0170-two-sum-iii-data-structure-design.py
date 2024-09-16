@@ -7,27 +7,28 @@ class TwoSum:
     def add(self, number: int) -> None:
         
         self.list.append(number)
+        self.list.sort()
         
 
     def find(self, value: int) -> bool:
         
-        hashmap = {}
+        i = 0
+        j = len(self.list) - 1
         
-        for i in range(len(self.list)):
+        while i < j:
             
-            num = self.list[i]
+            calc = self.list[i] + self.list[j]
             
-            target = value - num
-            
-           
-            
-            if target in hashmap:
+            if calc == value:
                 return True
             
+            elif calc < value:
+                i += 1
                 
-            
-            hashmap[num] = 1
-            
+            else:
+                j -= 1
+                
+                
         return False
             
             
