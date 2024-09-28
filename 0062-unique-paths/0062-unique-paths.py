@@ -7,8 +7,7 @@ class Solution:
         
         for i in range(m - 1):
             
-            new_row = [0] * n
-            new_row[-1] = 1
+            new_row = [1] * n
             
             for j in range(n - 2, -1, -1):
                 
