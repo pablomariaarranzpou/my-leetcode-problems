@@ -4,11 +4,9 @@ class Solution:
         n = len(prices)
         
         for i in range(n):
-            
-            pos = prices[i]
             for j in range(i + 1, n):
                 
-                if prices[j] <= pos:
+                if prices[j] <= prices[i]:
                     prices[i] -= prices[j]
                     break
         
